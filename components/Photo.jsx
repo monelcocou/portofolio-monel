@@ -56,7 +56,7 @@ const Photo = () => {
             transition={{
               duration: 20,
               repeat: Infinity,
-              repeatCount: "reverse",
+              repeatType: "reverse",
             }}
           />
         </motion.svg>
