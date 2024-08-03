@@ -17,6 +17,7 @@ import {
   FaReact,
   FaFigma,
   FaNodeJs,
+  FaWordpress,
 } from "react-icons/fa";
 
 import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
@@ -100,15 +101,14 @@ const experience = {
 };
 
 //Experience data
-const Education = {
+const education = {
   icon: "/assets/resume/cap.svg",
   title: "Mon éducation",
   description:
     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, asperiores eaque earum expedita fugit id itaque praesentium quidem ullam voluptatibus!",
   items: [
     {
-      institution:
-        "Ecole Nationale d'Economie Appliquée et de Management (ENEAM)",
+      institution: "ENEAM/UAC",
       degree: "Licence Professionnelle",
       duration: "2013",
     },
@@ -123,7 +123,7 @@ const Education = {
       duration: "2015",
     },
     {
-      institution: "Ecole Catholique Notre Dame de Lourdes",
+      institution: "Notre Dame de Lourdes/PN",
       degree: "Baccalaureat",
       duration: "2015",
     },
@@ -162,6 +162,10 @@ const skills = {
     {
       icon: <FaNodeJs />,
       name: "node.js",
+    },
+    {
+      icon: <FaWordpress />,
+      name: "Wordpress",
     },
   ],
 };
@@ -223,12 +227,66 @@ const Propos = () => {
 
             {/*Education*/}
             <TabsContent value="education" className="w-full">
-              Education
+              <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                <h3 className="text-4xl font-bold">{education.title}</h3>
+                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                  {education.description}
+                </p>
+                <ScrollArea className="h-[400px]">
+                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
+                    {education.items.map((item, index) => {
+                      return (
+                        <li
+                          key={index}
+                          className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                        >
+                          <span className="text-accent">{item.duration}</span>
+                          <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
+                            {item.degree}
+                          </h3>
+                          <div className="flex items-center gap-3">
+                            <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
+                            <p className="text-white/60">{item.institution}</p>
+                          </div>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </ScrollArea>
+              </div>
             </TabsContent>
 
             {/*Skills*/}
             <TabsContent value="skills" className="w-full">
-              Skills
+              <div className="flex flex-col gap-[30px]">
+                <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                  <h3 className="text-4xl font-bold">{skills.title}</h3>
+                  <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                    {skills.description}
+                  </p>
+                </div>
+
+                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
+                  {skills.skillList.map((skill, index) => {
+                    return (
+                      <li key={index}>
+                        <TooltipProvider delayDuration={100}>
+                          <Tooltip>
+                            <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
+                              <div className="text-6xl group-hover:text-accent transition-all duration-300">
+                                {skill.icon}
+                              </div>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p className="capitalize">{skill.name}</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        </TooltipProvider>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
             </TabsContent>
 
             {/*About*/}
