@@ -20,7 +20,7 @@ import {
   FaWordpress,
 } from "react-icons/fa";
 
-import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
+import { SiTailwindcss, SiNextdotjs, SiCsharp } from "react-icons/si";
 import { motion } from "framer-motion";
 
 //about data
@@ -162,6 +162,10 @@ const skills = {
     {
       icon: <FaNodeJs />,
       name: "node.js",
+    },
+    {
+      icon: <SiCsharp />,
+      name: "C#",
     },
     {
       icon: <FaWordpress />,
