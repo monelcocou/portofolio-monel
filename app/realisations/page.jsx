@@ -60,7 +60,7 @@ const Realisations = () => {
   };
 
   return (
-    <motion.div
+    <motion.section
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
@@ -169,7 +169,7 @@ const Realisations = () => {
           </div>
         </div>
       </div>
-    </motion.div>
+    </motion.section>
   );
 };
 
