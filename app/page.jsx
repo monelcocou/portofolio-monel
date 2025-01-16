@@ -19,8 +19,7 @@ const Home = () => {
               <br /> <span className="text-accent">Monel GAFFAN</span>
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">
-              I excel at crafting elegant digital experiences and I am
-              proficient in various programming languages and technologies
+              Développeur passionné, j’allie créativité et logique pour concevoir des solutions innovantes, alliant performance et expérience utilisateur.
             </p>
 
             {/*Button and social*/}
