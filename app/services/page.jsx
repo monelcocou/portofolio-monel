@@ -10,28 +10,28 @@ const services = [
     num: "01",
     title: "Web Developement",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tenetur.",
+      "Création de sites vitrines, e-commerce ou d'applications web performantes et évolutives..",
     href: "",
   },
   {
     num: "02",
-    title: "Logo Design",
+    title: "Applications Desktop",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tenetur.",
+      "Développement d'applications de bureau robustes et personnalisées, adaptées à vos besoins professionnels.",
     href: "",
   },
   {
     num: "03",
-    title: "UI/UX Design",
+    title: "Formations",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tenetur.",
+      "Formation des utilisateurs aux outils numériques et aux solutions développées.",
     href: "",
   },
   {
     num: "04",
-    title: "SEO",
+    title: "Maintenance et Support",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tenetur.",
+      "Suivi, mise à jour et optimisation des différentes solutions développées.",
     href: "",
   },
 ];

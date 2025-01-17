@@ -35,11 +35,11 @@ const about = {
     },
     {
       fieldName: "Phone",
-      fieldValue: "(+229) 97 15 85 19",
+      fieldValue: "(+33) 07 44 72 09 33  -  (+229) 01 97 15 85 19",
     },
     {
       fieldName: "Expérience",
-      fieldValue: "+8 Années",
+      fieldValue: "+7 Années",
     },
     {
       fieldName: "Nationalité",
@@ -69,8 +69,8 @@ const experience = {
   items: [
     {
       company: "CICASYS",
-      position: "CEO",
-      duration: "2019 - à nos jours",
+      position: "CEO et Développeur",
+      duration: "2016 - à nos jours",
     },
     {
       company: "Web Design",
