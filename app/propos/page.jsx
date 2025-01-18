@@ -17,46 +17,48 @@ import {
   FaReact,
   FaFigma,
   FaNodeJs,
-  FaWordpress,
+  FaWordpress, FaPhp, FaSymfony, FaBootstrap,
 } from "react-icons/fa";
 
-import { SiTailwindcss, SiNextdotjs, SiCsharp } from "react-icons/si";
+import {SiTailwindcss, SiNextdotjs, SiCsharp, SiNestjs, SiMysql} from "react-icons/si";
 import { motion } from "framer-motion";
+import {BiLogoPostgresql} from "react-icons/bi";
+import {DiMsqlServer} from "react-icons/di";
 
 //about data
 const about = {
   title: "A propos de moi",
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, asperiores eaque earum expedita fugit id itaque praesentium quidem ullam voluptatibus!",
+    "Vous souhaitez collaborer ou en savoir plus sur mes services ? N’hésitez pas à me contacter. Je suis disponible pour échanger et répondre à vos questions.",
   info: [
     {
-      fieldName: "Nom",
+      fieldName: "Nom:",
       fieldValue: "Monel Cocou GAFFAN",
     },
     {
-      fieldName: "Phone",
-      fieldValue: "(+33) 07 44 72 09 33  -  (+229) 01 97 15 85 19",
+      fieldName: "Phone:",
+      fieldValue: "(+33) 07 44 72 09 33",
     },
     {
-      fieldName: "Expérience",
+      fieldName: "Expérience:",
       fieldValue: "+7 Années",
     },
     {
-      fieldName: "Nationalité",
+      fieldName: "Nationalité:",
       fieldValue: "Béninoise",
     },
     {
-      fieldName: "Email",
+      fieldName: "Email:",
       fieldValue: "monelcocou@gmail.com",
     },
     {
-      fieldName: "Langues",
+      fieldName: "Langues:",
       fieldValue: "Français, Anglais",
     },
-    {
+    /*{
       fieldName: "Freelance",
       fieldValue: "Disponible",
-    },
+    },*/
   ],
 };
 
@@ -65,37 +67,22 @@ const experience = {
   icon: "/assets/resume/badge.svg",
   title: "Mon expérience",
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, asperiores eaque earum expedita fugit id itaque praesentium quidem ullam voluptatibus!",
+    "Mon parcours professionnel m'a permis de concevoir des applications sur mesure et de contribuer à des projets innovants, alliant expertise technique et collaboration avec des entreprises pour répondre à leurs besoins.",
   items: [
     {
       company: "CICASYS",
       position: "CEO et Développeur",
-      duration: "2016 - à nos jours",
+      duration: "2019 - à nos jours",
     },
     {
-      company: "Web Design",
-      position: "Full Stack Developper",
-      duration: "2019 - 2022",
-    },
-    {
-      company: "E-commerce Startup",
-      position: "Full Stack Developper",
-      duration: "2018 - 2019",
-    },
-    {
-      company: "Tech Academy",
-      position: "Full Stack Developper",
-      duration: "2018 - 2019",
-    },
-    {
-      company: "Digital Agency",
-      position: "Junior Developer",
-      duration: "2018 - 2019",
+      company: "GED TECHNOLOGIES",
+      position: "Consultant en GED",
+      duration: "2016 - 2018",
     },
     {
       company: "AMANGA SA",
-      position: "Junior Developer",
-      duration: "2018 - 2019",
+      position: "Développeur d’applis Desktop",
+      duration: "2014 - 2016",
     },
   ],
 };
@@ -105,27 +92,23 @@ const education = {
   icon: "/assets/resume/cap.svg",
   title: "Mon éducation",
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, asperiores eaque earum expedita fugit id itaque praesentium quidem ullam voluptatibus!",
+    "Mon parcours académique en informatique m'a permis d'acquérir des bases solides et des compétences avancées en développement, analyse et gestion de projets numériques.",
   items: [
     {
-      institution: "ENEAM/UAC",
-      degree: "Licence Professionnelle",
+      institution: "Université de Rennes 1",
+      degree: "Licence Informatique Parcours MIAGE",
+      duration: "2024",
+    },
+    {
+      institution: "Université d'Abomey Calavi",
+      degree: "Licence Informatique de Gestion",
       duration: "2013",
     },
+
     {
-      institution: "Design School",
-      degree: "Licence Professionnelle",
-      duration: "2013",
-    },
-    {
-      institution: "Online course",
-      degree: "Programing Course",
-      duration: "2015",
-    },
-    {
-      institution: "Notre Dame de Lourdes/PN",
-      degree: "Baccalaureat",
-      duration: "2015",
+      institution: "Notre Dame de Lourdes - BJ",
+      degree: "Baccalauréat",
+      duration: "2010",
     },
   ],
 };
@@ -133,7 +116,7 @@ const education = {
 const skills = {
   title: "My skills",
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, asperiores eaque earum expedita fugit id itaque praesentium quidem ullam voluptatibus!",
+    "Mes compétences techniques et transversales reflètent mon expertise en développement, analyse et conception, ainsi que ma capacité à m'adapter aux besoins des projets.",
   skillList: [
     {
       icon: <FaHtml5 />,
@@ -148,20 +131,36 @@ const skills = {
       name: "Javascript",
     },
     {
-      icon: <FaReact />,
-      name: "react.js",
-    },
-    {
-      icon: <SiNextdotjs />,
-      name: "next.js",
+      icon:<FaBootstrap />,
+      name: "Javascript",
     },
     {
       icon: <SiTailwindcss />,
       name: "tailwind.css",
     },
     {
+      icon: <FaReact />,
+      name: "react.js",
+    },
+    {
       icon: <FaNodeJs />,
       name: "node.js",
+    },
+    {
+      icon: <SiNextdotjs />,
+      name: "next.js",
+    },
+    {
+      icon: <FaPhp />,
+      name: "PHP",
+    },
+    {
+      icon: <FaSymfony />,
+      name: "Symfony",
+    },
+    {
+      icon: <SiNestjs />,
+      name: "NestJS",
     },
     {
       icon: <SiCsharp />,
@@ -171,6 +170,21 @@ const skills = {
       icon: <FaWordpress />,
       name: "Wordpress",
     },
+    ,
+    {
+      icon: <SiMysql />,
+      name: "MySQL",
+    },
+    {
+      icon: <BiLogoPostgresql />,
+      name: "C#",
+    },
+    {
+      icon: <DiMsqlServer />,
+      name: "SQL Server",
+    }
+
+
   ],
 };
 

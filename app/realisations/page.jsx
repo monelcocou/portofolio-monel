@@ -19,35 +19,58 @@ import WorkSliderBtns from "@/components/WorkSliderBtns";
 const projects = [
   {
     num: "01",
-    category: "frontend",
-    title: "project 1",
+    category: "Medica",
+    title: "Medica",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores dolores eum fuga itaque maxime non pariatur quia recusandae saepe velit.",
-    stack: [{ name: "Html 5" }, { name: "css" }, { name: "Javascript" }],
+      "Medica est une application utilisée par plus de 50 cliniques pour simplifier et accélérer la gestion des données médicales.",
+    stack: [{ name: "C#" }, { name: "SQL Server" }],
     image: "/assets/work/thumb1.png",
-    live: "",
+    live: "https://www.cicasys.co/",
     github: "",
   },
   {
     num: "02",
-    category: "fullStack",
-    title: "project 2",
+    category: "Cica Laboratoire",
+    title: "Cica Laboratoire",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores dolores eum fuga itaque maxime non pariatur quia recusandae saepe velit.",
-    stack: [{ name: "C#" }, { name: "SQL Server" }, { name: "Javascript" }],
+      "Solution avancée de gestion de laboratoire, optimisant l’analyse des échantillons, la traçabilité et la collaboration pour des résultats fiables et rapides.",
+    stack: [{ name: "C#" }, { name: "SQL Server" }],
     image: "/assets/work/thumb2.png",
-    live: "",
+    live: "https://www.cicasys.co/",
     github: "",
   },
   {
     num: "03",
-    category: "fullStack",
-    title: "project 3",
+    category: "Cica Facturation",
+    title: "Cica Facturation",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores dolores eum fuga itaque maxime non pariatur quia recusandae saepe velit.",
-    stack: [{ name: "Next.js" }, { name: "Tailwind" }, { name: "Node.js" }],
+      "Logiciel de facturation professionnel, simplifiant la gestion des devis, factures et paiements pour une comptabilité précise et efficace.",
+    stack: [{ name: "C#" }, { name: "SQL Server" }],
     image: "/assets/work/thumb3.png",
-    live: "",
+    live: "https://www.cicasys.co/",
+    github: "",
+  },
+  {
+    num: "04",
+    category: "Optica",
+    title: "Optica",
+    description:
+        "Optica est un logiciel dédié à la gestion des centres optiques, conçu pour simplifier leurs opérations et améliorer leur productivité.",
+    stack: [{ name: "C#" }, { name: "SQL Server" }],
+    image: "/assets/work/thumb3.png",
+    live: "https://www.cicasys.co/",
+    github: "",
+  },
+  {
+    num: "05",
+    category: "AdopteUnDev",
+    title: "Cica Facturation",
+    description:
+        "\n" +
+        "AdopteUnDev est une plateforme web connectant entreprises et développeurs, facilitant la collaboration pour des projets sur mesure.",
+    stack: [{ name: "Symfony" }, { name: "PostgreSQL" }],
+    image: "/assets/work/thumb3.png",
+    live: "https://www.cicasys.co/",
     github: "",
   },
 ];
@@ -79,7 +102,7 @@ const Realisations = () => {
 
               {/*project category*/}
               <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
-                {project.category} project
+                {project.category}
               </h2>
 
               {/*project description*/}
