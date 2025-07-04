@@ -20,7 +20,8 @@ import {
   FaWordpress, FaPhp, FaSymfony, FaBootstrap,
 } from "react-icons/fa";
 
-import {SiTailwindcss, SiNextdotjs, SiCsharp, SiNestjs, SiMysql} from "react-icons/si";
+import {SiTailwindcss, SiNextdotjs, SiNestjs, SiMysql} from "react-icons/si";
+import { TbBrandCSharp } from "react-icons/tb";
 import { motion } from "framer-motion";
 import {BiLogoPostgresql} from "react-icons/bi";
 import {DiMsqlServer} from "react-icons/di";
@@ -163,7 +164,7 @@ const skills = {
       name: "NestJS",
     },
     {
-      icon: <SiCsharp />,
+      icon: <TbBrandCSharp />,
       name: "C#",
     },
     {
