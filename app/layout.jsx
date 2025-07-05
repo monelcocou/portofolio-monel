@@ -3,8 +3,6 @@ import "./globals.css";
 import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
 import StairTransition from "@/components/StairTransition";
-import { DefaultSeo } from 'next-seo';
-
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -12,27 +10,28 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrainsMono",
 });
 
-const defaultSEOConfig = {
+export const metadata = {
   title: 'Monel Cocou GAFFAN - Développeur Full-Stack',
   description: 'Portfolio de Monel Cocou GAFFAN, développeur expert en React.js, Next.js, Nest.js, C# et bases de données. Spécialiste applications de gestion pour PME et startups à Rennes.',
-  canonical: 'https://monelcocou.com',
+  keywords: 'Monel Cocou GAFFAN, développeur web, React.js, Next.js, Nest.js, C#, développeur Rennes',
+  author: 'Monel Cocou GAFFAN',
   openGraph: {
-    type: 'website',
-    url: 'https://monelcocou.com',
     title: 'Monel Cocou GAFFAN - Développeur Expert',
     description: 'Portfolio professionnel de Monel Cocou GAFFAN, développeur expert basé à Rennes',
+    url: 'https://monelcocou.com',
+    siteName: 'Monel Cocou GAFFAN - Portfolio',
+    type: 'website',
   },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fr">
+      <html lang="fr">
       <body className={jetbrainsMono.variable}>
-      <DefaultSeo {...defaultSEOConfig} />
-        <Header />
-        <StairTransition />
-        <PageTransition>{children}</PageTransition>
+      <Header />
+      <StairTransition />
+      <PageTransition>{children}</PageTransition>
       </body>
-    </html>
+      </html>
   );
 }
