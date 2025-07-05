@@ -11,17 +11,20 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: 'Monel Cocou GAFFAN - Développeur Full-Stack',
-  description: 'Portfolio de Monel Cocou GAFFAN, développeur expert en React.js, Next.js, Nest.js, C# et bases de données. Spécialiste applications de gestion pour PME et startups à Rennes.',
-  keywords: 'Monel Cocou GAFFAN, développeur web, React.js, Next.js, Nest.js, C#, développeur Rennes',
-  author: 'Monel Cocou GAFFAN',
-  openGraph: {
-    title: 'Monel Cocou GAFFAN - Développeur Expert',
-    description: 'Portfolio professionnel de Monel Cocou GAFFAN, développeur expert basé à Rennes',
-    url: 'https://monelcocou.com',
-    siteName: 'Monel Cocou GAFFAN - Portfolio',
-    type: 'website',
-  },
+    title: 'Monel Cocou GAFFAN - Développeur Full-Stack',
+    description: 'Portfolio de Monel Cocou GAFFAN, développeur expert en React.js, Next.js, Nest.js, C# et bases de données. Spécialiste applications de gestion pour PME et startups à Rennes.',
+    keywords: 'Monel Cocou GAFFAN, développeur web, React.js, Next.js, Nest.js, C#, développeur Rennes',
+    author: 'Monel Cocou GAFFAN',
+    verification: {
+        google: '1jRaFlBzW6GIb-u_zO1gWAZ63YQCQsHmIyIA-f5p5Hc',
+    },
+    openGraph: {
+        title: 'Monel Cocou GAFFAN - Développeur Expert',
+        description: 'Portfolio professionnel de Monel Cocou GAFFAN, développeur expert basé à Rennes',
+        url: 'https://monelcocou.com',
+        siteName: 'Monel Cocou GAFFAN - Portfolio',
+        type: 'website',
+    },
 };
 
 export default function RootLayout({ children }) {
