@@ -18,9 +18,6 @@ const Home = () => {
               Hi! I&apos;m
               <br /> <span className="text-accent">Monel GAFFAN</span>
             </h1>
-            {/*<p className="max-w-[500px] mb-9 text-white/80">*/}
-            {/*  Développeur passionné, j’allie créativité et logique pour concevoir des solutions innovantes, alliant performance et expérience utilisateur.*/}
-            {/*</p>*/}
             <p className="max-w-[500px] mb-9 text-white/80">
               Monel Cocou GAFFAN, développeur passionné basé à Rennes, j&apos;allie créativité et logique pour concevoir des solutions innovantes en React.js, Next.js, Nest.js et C#, alliant performance et expérience utilisateur.
             </p>
