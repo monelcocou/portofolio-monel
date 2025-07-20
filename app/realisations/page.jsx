@@ -24,7 +24,7 @@ const projects = [
     description:
       "Medica est une application utilisée par plus de 50 cliniques pour simplifier et accélérer la gestion des données médicales.",
     stack: [{ name: "C#" }, { name: "SQL Server" }],
-    image: "/assets/work/thumb1.png",
+    image: "/assets/work/ic_medica.png",
     live: "https://cicasys.co/medica/",
     github: "",
   },
@@ -35,7 +35,7 @@ const projects = [
     description:
       "Solution avancée de gestion de laboratoire, optimisant l’analyse des échantillons, la traçabilité et la collaboration pour des résultats fiables et rapides.",
     stack: [{ name: "C#" }, { name: "SQL Server" }],
-    image: "/assets/work/thumb2.png",
+    image: "/assets/work/ic_labo.png",
     live: "https://cicasys.co/cica-laboratoire/",
     github: "",
   },
@@ -46,7 +46,7 @@ const projects = [
     description:
       "Logiciel de facturation professionnel, simplifiant la gestion des devis, factures et paiements pour une comptabilité précise et efficace.",
     stack: [{ name: "C#" }, { name: "SQL Server" }],
-    image: "/assets/work/thumb3.png",
+    image: "/assets/work/ic_facturation.png",
     live: "https://cicasys.co/cica-facturation/",
     github: "",
   },
@@ -57,7 +57,7 @@ const projects = [
     description:
         "Optica est un logiciel dédié à la gestion des centres optiques, conçu pour simplifier leurs opérations et améliorer leur productivité.",
     stack: [{ name: "C#" }, { name: "SQL Server" }],
-    image: "/assets/work/thumb3.png",
+    image: "/assets/work/ic_optica.png",
     live: "https://www.cicasys.co/",
     github: "",
   },
@@ -68,7 +68,7 @@ const projects = [
     description:
         "InnovRental est une application SaaS de gestion locative, à laquelle j’ai contribué durant mon stage en développant des modules clés.",
     stack: [{ name: "Laravel" }, { name: "Filament" }, { name: "Livewire" }, { name: "MySQL" }],
-    image: "/assets/work/thumb3.png",
+    image: "/assets/work/ic_innov_rental.png",
     live: "https://dev1.innovrental.com/",
     github: "",
   },
@@ -79,7 +79,7 @@ const projects = [
     description:
         "Edubase est une application de gestion scolaire complète, facilitant le suivi académique, administratif et la communication entre acteurs éducatifs.",
     stack: [{ name: "NestJS" }, { name: "NextJS" }, { name: "Prisma" }, { name: "PostgreSQL" }],
-    image: "/assets/work/thumb3.png",
+    image: "/assets/work/ic_edubase.png",
     live: "https://github.com/monelcocou/edubase",
     github: "",
   },
