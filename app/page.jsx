@@ -19,12 +19,14 @@ const Home = () => {
               <br /> <span className="text-accent">Monel GAFFAN</span>
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">
-              Monel Cocou GAFFAN, développeur passionné basé à Rennes, j&apos;allie créativité et logique pour concevoir des solutions innovantes en React.js, Next.js, Nest.js et C#, alliant performance et expérience utilisateur.
+              Monel Cocou GAFFAN, développeur passionné basé à Rennes, j&apos;allie créativité pour conce
+              voir des solutions innovantes en React.js, Next.js, Nest.js et C#,
+              alliant performance et expérience utilisateur.
             </p>
 
             {/*Button and social*/}
             <div className="flex flex-col xl:flex-row items-center gap-8">
-              <a href="/assets/CV%20Monel%20GAFFAN.pdf" download="Monel-CV.pdf">
+              <a href="/assets/CV-Monel.pdf" download="Monel-CV.pdf">
                 <Button
                     variant="outline"
                     size="lg"

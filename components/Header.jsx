@@ -18,7 +18,7 @@ const Header = () => {
         {/*Desktop nav & hire me button*/}
         <div className="hidden xl:flex items-center gap-8">
           <Nav />
-          <Link href="/assets/CV%20Monel%20GAFFAN.pdf">
+          <Link href="/assets/CV-Monel.pdf">
             <Button>Mon CV</Button>
           </Link>
         </div>

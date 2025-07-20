@@ -25,7 +25,7 @@ const projects = [
       "Medica est une application utilisée par plus de 50 cliniques pour simplifier et accélérer la gestion des données médicales.",
     stack: [{ name: "C#" }, { name: "SQL Server" }],
     image: "/assets/work/thumb1.png",
-    live: "https://www.cicasys.co/",
+    live: "https://cicasys.co/medica/",
     github: "",
   },
   {
@@ -36,7 +36,7 @@ const projects = [
       "Solution avancée de gestion de laboratoire, optimisant l’analyse des échantillons, la traçabilité et la collaboration pour des résultats fiables et rapides.",
     stack: [{ name: "C#" }, { name: "SQL Server" }],
     image: "/assets/work/thumb2.png",
-    live: "https://www.cicasys.co/",
+    live: "https://cicasys.co/cica-laboratoire/",
     github: "",
   },
   {
@@ -47,7 +47,7 @@ const projects = [
       "Logiciel de facturation professionnel, simplifiant la gestion des devis, factures et paiements pour une comptabilité précise et efficace.",
     stack: [{ name: "C#" }, { name: "SQL Server" }],
     image: "/assets/work/thumb3.png",
-    live: "https://www.cicasys.co/",
+    live: "https://cicasys.co/cica-facturation/",
     github: "",
   },
   {
@@ -63,14 +63,24 @@ const projects = [
   },
   {
     num: "05",
-    category: "AdopteUnDev",
-    title: "Cica Facturation",
+    category: "InnovRental",
+    title: "InnovRental",
     description:
-        "\n" +
-        "AdopteUnDev est une plateforme web connectant entreprises et développeurs, facilitant la collaboration pour des projets sur mesure.",
-    stack: [{ name: "Symfony" }, { name: "PostgreSQL" }],
+        "InnovRental est une application SaaS de gestion locative, à laquelle j’ai contribué durant mon stage en développant des modules clés.",
+    stack: [{ name: "Laravel" }, { name: "Filament" }, { name: "Livewire" }, { name: "MySQL" }],
     image: "/assets/work/thumb3.png",
-    live: "https://www.cicasys.co/",
+    live: "https://dev1.innovrental.com/",
+    github: "",
+  },
+  {
+    num: "06",
+    category: "EduBase",
+    title: "EduBase",
+    description:
+        "Edubase est une application de gestion scolaire complète, facilitant le suivi académique, administratif et la communication entre acteurs éducatifs.",
+    stack: [{ name: "NestJS" }, { name: "NextJS" }, { name: "Prisma" }, { name: "PostgreSQL" }],
+    image: "/assets/work/thumb3.png",
+    live: "https://github.com/monelcocou/edubase",
     github: "",
   },
 ];

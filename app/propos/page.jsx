@@ -30,7 +30,9 @@ import {DiMsqlServer} from "react-icons/di";
 const about = {
   title: "A propos de moi",
   description:
-    "Vous souhaitez collaborer ou en savoir plus sur mes services ? N’hésitez pas à me contacter. Je suis disponible pour échanger et répondre à vos questions.",
+    "Vous avez un projet en tête ou souhaitez en savoir plus sur mes" +
+      " services ? Je serais ravi d’échanger avec vous. N’hésitez " +
+      "pas à me contacter pour discuter de vos besoins ou poser vos questions. Je suis à votre écoute.",
   info: [
     {
       fieldName: "Nom:",
@@ -42,7 +44,7 @@ const about = {
     },
     {
       fieldName: "Expérience:",
-      fieldValue: "+7 Années",
+      fieldValue: "+8 Années",
     },
     {
       fieldName: "Nationalité:",
@@ -68,12 +70,22 @@ const experience = {
   icon: "/assets/resume/badge.svg",
   title: "Mon expérience",
   description:
-    "Mon parcours professionnel m'a permis de concevoir des applications sur mesure et de contribuer à des projets innovants, alliant expertise technique et collaboration avec des entreprises pour répondre à leurs besoins.",
+    "Mon parcours professionnel m’a permis de concevoir des solutions " +
+      "logicielles sur mesure et de participer à des projets innovants, " +
+      "en étroite collaboration avec des entreprises. Grâce à une solide " +
+      "expertise technique et un sens aigu de l’écoute, j’ai pu répondre " +
+      "efficacement à des besoins métiers concrets, tout en assurant performance, " +
+      "fiabilité et évolutivité des outils développés",
   items: [
+    {
+      company: "InnovQube",
+      position: "Stage Développeur Laravel",
+      duration: "Avril - Juin 2025",
+    },
     {
       company: "CICASYS",
       position: "CEO et Développeur",
-      duration: "2019 - à nos jours",
+      duration: "2019 - 2024",
     },
     {
       company: "GED TECHNOLOGIES",
@@ -93,7 +105,11 @@ const education = {
   icon: "/assets/resume/cap.svg",
   title: "Mon éducation",
   description:
-    "Mon parcours académique en informatique m'a permis d'acquérir des bases solides et des compétences avancées en développement, analyse et gestion de projets numériques.",
+    "Mon parcours académique en informatique m’a permis d’acquérir des bases" +
+      " théoriques solides ainsi que des compétences avancées en développement, " +
+      "en analyse de systèmes et en gestion de projets numériques. " +
+      "Ces connaissances me permettent aujourd’hui de concevoir des " +
+      "solutions adaptées aux enjeux techniques et organisationnels des entreprises.",
   items: [
     {
       institution: "Université de Rennes 1",
@@ -117,7 +133,11 @@ const education = {
 const skills = {
   title: "My skills",
   description:
-    "Mes compétences techniques et transversales reflètent mon expertise en développement, analyse et conception, ainsi que ma capacité à m'adapter aux besoins des projets.",
+    "Mes compétences techniques et transversales témoignent de mon expertise en " +
+      "développement full-stack, en modélisation de systèmes, et en conception de " +
+      "solutions performantes. Curieux, rigoureux et orienté résultats, je sais" +
+      " m’adapter rapidement aux besoins des projets et collaborer efficacement avec " +
+      "les équipes techniques et métiers.",
   skillList: [
     {
       icon: <FaHtml5 />,
@@ -133,7 +153,7 @@ const skills = {
     },
     {
       icon:<FaBootstrap />,
-      name: "Javascript",
+      name: "Bootstrap",
     },
     {
       icon: <SiTailwindcss />,
@@ -144,12 +164,12 @@ const skills = {
       name: "react.js",
     },
     {
-      icon: <FaNodeJs />,
-      name: "node.js",
-    },
-    {
       icon: <SiNextdotjs />,
       name: "next.js",
+    },
+    {
+      icon: <FaNodeJs />,
+      name: "node.js",
     },
     {
       icon: <FaPhp />,
@@ -217,7 +237,7 @@ const Propos = () => {
             <TabsContent value="experience" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{experience.title}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                <p className="text-white/60 mx-auto xl:mx-0">
                   {experience.description}
                 </p>
                 <ScrollArea className="h-[400px]">
@@ -248,7 +268,7 @@ const Propos = () => {
             <TabsContent value="education" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{education.title}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                <p className="text-white/60 mx-auto xl:mx-0">
                   {education.description}
                 </p>
                 <ScrollArea className="h-[400px]">
@@ -280,7 +300,7 @@ const Propos = () => {
               <div className="flex flex-col gap-[30px]">
                 <div className="flex flex-col gap-[30px] text-center xl:text-left">
                   <h3 className="text-4xl font-bold">{skills.title}</h3>
-                  <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                  <p className="text-white/60 mx-auto xl:mx-0">
                     {skills.description}
                   </p>
                 </div>
@@ -315,10 +335,10 @@ const Propos = () => {
             >
               <div className="flex flex-col gap-[30px]">
                 <h3 className="text-4xl font-bold">{about.title}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                <p className="text-white/60 mx-auto xl:mx-0">
                   {about.description}
                 </p>
-                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[720px] mx-auto xl:mx-0">
+                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[720px] mx-auto xl:mx-0 mt-5">
                   {about.info.map((item, index) => {
                     return (
                       <li

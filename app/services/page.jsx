@@ -10,28 +10,42 @@ const services = [
     num: "01",
     title: "Web Developement",
     description:
-      "Création de sites vitrines, e-commerce ou d'applications web performantes et évolutives..",
+      "Création de plateformes web performantes et évolutives avec Laravel, Symfony, ReactJS, Next.js et NestJS.",
     href: "",
   },
   {
     num: "02",
     title: "Applications Desktop",
     description:
-      "Développement d'applications de bureau robustes et personnalisées, adaptées à vos besoins professionnels.",
+      "Conception d’applications Windows robustes avec C# et SQL Server, adaptées aux besoins métiers des PME.",
     href: "",
   },
   {
     num: "03",
-    title: "Formations",
+    title: "Solutions SaaS",
     description:
-      "Formation des utilisateurs aux outils numériques et aux solutions développées.",
+        "Développement de logiciels SaaS clés en main pour digitaliser les processus métiers.",
     href: "",
   },
   {
     num: "04",
-    title: "Maintenance et Support",
+    title: "Gestion de projet",
     description:
-      "Suivi, mise à jour et optimisation des différentes solutions développées.",
+      "Prise en charge du cycle complet d’un projet, de l’expression des besoins au déploiement final.",
+    href: "",
+  },
+  {
+    num: "05",
+    title: "Formations",
+    description:
+        "Sessions de formation pour assurer une prise en main rapide et une adoption réussie des outils développés.",
+    href: "",
+  },
+  {
+    num: "06",
+    title: "Maintenance et support",
+    description:
+        "Suivi post-livraison, correction de bugs, ajout de nouvelles fonctionnalités, et assistance continue.",
     href: "",
   },
 ];

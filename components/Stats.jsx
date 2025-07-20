@@ -10,15 +10,15 @@ const stats = [
   },
   {
     num: 5,
-    text: "Projets personnels",
+    text: "Projets réalisés",
   },
   {
     num: +10,
     text: "Technologies maitrisées",
   },
   {
-    num: 300,
-    text: "Code commits",
+    num: 100,
+    text: "Clients satisfaits",
   },
 ];
 
