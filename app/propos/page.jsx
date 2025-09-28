@@ -113,6 +113,11 @@ const education = {
   items: [
     {
       institution: "Université de Rennes 1",
+      degree: "Master Informatoque Parcours MIAGE",
+      duration: "2025",
+    },
+    {
+      institution: "Université de Rennes 1",
       degree: "Licence Informatique Parcours MIAGE",
       duration: "2024",
     },
