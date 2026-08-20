@@ -9,7 +9,7 @@ const links = [
     path: "/",
   },
   {
-    name: "Services",
+    name: "Expertise",
     path: "/services",
   },
   {
@@ -20,10 +20,10 @@ const links = [
     name: "Réalisations",
     path: "/realisations",
   },
-  // {
-  //   name: "Contact",
-  //   path: "/contact",
-  // },
+  {
+    name: "Contact",
+    path: "/contact",
+  },
 ];
 
 const Nav = () => {

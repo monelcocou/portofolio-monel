@@ -12,7 +12,7 @@ const links = [
     path: "/",
   },
   {
-    name: "Services",
+    name: "Expertise",
     path: "/services",
   },
   {
@@ -40,9 +40,9 @@ const MobileNav = () => {
       <SheetContent className="flex flex-col">
         <div className="mt-32 mb-40 text-center text-2xl">
           <Link href="/">
-            <h1 className="text-4xl font-semibold">
+            <span className="text-4xl font-semibold">
               Monel<span className="text-accent">.</span>
-            </h1>
+            </span>
           </Link>
         </div>
 
