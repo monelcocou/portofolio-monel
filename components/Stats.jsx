@@ -6,25 +6,25 @@ import CountUp from "react-countup";
 const stats = [
   {
     num: 8,
-    text: "Années d'éxpériences",
+    text: "Années d'expérience",
   },
   {
     num: 5,
     text: "Projets réalisés",
   },
   {
-    num: +10,
-    text: "Technologies maitrisées",
+    num: 20,
+    text: "Technologies maîtrisées",
   },
   {
-    num: 100,
-    text: "Clients satisfaits",
+    num: 70,
+    text: "Structures équipées",
   },
 ];
 
 const Stats = () => {
   return (
-    <container className="pt-4 pb-12 xl:pt-0 xl:pb-0">
+    <section className="pt-4 pb-12 xl:pt-0 xl:pb-0">
       <div className="container mx-auto">
         <div className="flex flex-wrap gap-6 max-w-[80vw] mx-auto xl:max-w-none">
           {stats.map((item, index) => {
@@ -36,7 +36,7 @@ const Stats = () => {
               >
                 <CountUp
                   end={item.num}
-                  duration={5}
+                  duration={2}
                   delay={2}
                   className="text-4xl xl:text-6xl font-extrabold"
                 />
@@ -50,7 +50,7 @@ const Stats = () => {
           })}
         </div>
       </div>
-    </container>
+    </section>
   );
 };
 
