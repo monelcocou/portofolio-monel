@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
@@ -18,25 +18,100 @@ import {
 
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
+const EMAIL = "monelcocou@gmail.com";
+const PHONE = "(+33) 7 44 72 09 33";
+
 const info = [
   {
     icon: <FaPhoneAlt />,
-    title: "Phone",
-    description: "97158519",
+    title: "Téléphone",
+    description: PHONE,
+    href: "tel:+33744720933",
   },
   {
     icon: <FaEnvelope />,
     title: "Email",
-    description: "monelcocou@gmail.com",
+    description: EMAIL,
+    href: `mailto:${EMAIL}`,
   },
   {
     icon: <FaMapMarkerAlt />,
     title: "Adresse",
-    description: "25 rue du Nivernais, 35000, Rennes",
+    description: "Rennes, France",
+    href: null,
   },
 ];
 
+const services = [
+  { value: "opportunite", label: "Une opportunité (alternance, CDI)" },
+  { value: "projet", label: "Un projet ou une mission" },
+  { value: "technique", label: "Une question technique" },
+  { value: "autre", label: "Autre" },
+];
+
+const initialForm = {
+  firstname: "",
+  lastname: "",
+  email: "",
+  phone: "",
+  service: "",
+  message: "",
+  website: "", // champ piège anti-robots
+};
+
 const Contacts = () => {
+  const [form, setForm] = useState(initialForm);
+  const [status, setStatus] = useState("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setForm((previous) => ({ ...previous, [name]: value }));
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    if (status === "sending") return;
+
+    setStatus("sending");
+    setErrorMessage("");
+
+    const service = services.find((item) => item.value === form.service);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstname: form.firstname,
+          lastname: form.lastname,
+          email: form.email,
+          phone: form.phone,
+          subject: service ? service.label : "",
+          message: form.message,
+          website: form.website,
+        }),
+      });
+
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        setErrorMessage(data.error || "L’envoi a échoué. Réessayez.");
+        setStatus("error");
+        return;
+      }
+
+      setForm(initialForm);
+      setStatus("sent");
+    } catch {
+      setErrorMessage(
+        "Impossible de joindre le serveur. Vérifiez votre connexion.",
+      );
+      setStatus("error");
+    }
+  };
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -47,35 +122,86 @@ const Contacts = () => {
       className="py-6"
     >
       <div className="container mx-auto">
+        <div className="mb-14 text-center xl:text-left">
+          <h1 className="h2 mb-4">
+            Me <span className="text-accent">contacter</span>
+          </h1>
+          <p className="max-w-[600px] mx-auto xl:mx-0 text-white/60">
+            Une opportunité, un projet ou une simple question ? Écrivez-moi, je
+            réponds sous 48 heures.
+          </p>
+        </div>
+
         <div className="flex flex-col xl:flex-row gap-[30px]">
           {/*form*/}
           <div className="xl:h-[54%] order-2 xl:order-none">
-            <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
-              <h3 className="text-4xl text-accent">Travaillons ensemble</h3>
+            <form
+              onSubmit={handleSubmit}
+              className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"
+            >
+              <h2 className="text-4xl text-accent">Travaillons ensemble</h2>
               <p className="text-white/60">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Deleniti hic maiores repudiandae rerum sint!
+                Décrivez-moi votre demande en quelques lignes, je reviens vers
+                vous rapidement.
               </p>
 
               {/*input*/}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input type="firstname" placeholder="First Name" />
-                <Input type="lastname" placeholder="Last Name" />
-                <Input type="email" placeholder="Email adress" />
-                <Input type="phone" placeholder="Phone number" />
+                <Input
+                  type="text"
+                  name="firstname"
+                  value={form.firstname}
+                  onChange={handleChange}
+                  placeholder="Prénom"
+                  aria-label="Prénom"
+                  required
+                />
+                <Input
+                  type="text"
+                  name="lastname"
+                  value={form.lastname}
+                  onChange={handleChange}
+                  placeholder="Nom"
+                  aria-label="Nom"
+                  required
+                />
+                <Input
+                  type="email"
+                  name="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  placeholder="Adresse email"
+                  aria-label="Adresse email"
+                  required
+                />
+                <Input
+                  type="tel"
+                  name="phone"
+                  value={form.phone}
+                  onChange={handleChange}
+                  placeholder="Numéro de téléphone"
+                  aria-label="Numéro de téléphone"
+                />
               </div>
 
               {/*Select*/}
-              <Select>
-                <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Select a service" />
+              <Select
+                value={form.service || undefined}
+                onValueChange={(value) =>
+                  setForm((previous) => ({ ...previous, service: value }))
+                }
+              >
+                <SelectTrigger className="w-full" aria-label="Objet de votre message">
+                  <SelectValue placeholder="Objet de votre message" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectGroup>
-                    <SelectLabel>Select a service</SelectLabel>
-                    <SelectItem value="est">Web Development</SelectItem>
-                    <SelectItem value="cst">UI/UX Design</SelectItem>
-                    <SelectItem value="mst">Logo Design</SelectItem>
+                    <SelectLabel>Objet de votre message</SelectLabel>
+                    {services.map((service) => (
+                      <SelectItem key={service.value} value={service.value}>
+                        {service.label}
+                      </SelectItem>
+                    ))}
                   </SelectGroup>
                 </SelectContent>
               </Select>
@@ -83,11 +209,52 @@ const Contacts = () => {
               {/*textarea*/}
               <Textarea
                 className="h-[200px]"
-                placeholder="Type your message here"
+                name="message"
+                value={form.message}
+                onChange={handleChange}
+                placeholder="Votre message"
+                aria-label="Votre message"
+                required
+              />
+
+              {/*Champ piège : masqué aux humains, visible pour les robots*/}
+              <input
+                type="text"
+                name="website"
+                value={form.website}
+                onChange={handleChange}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                className="hidden"
               />
 
               {/*Button*/}
-              <Button size="md" className="max-w-40"></Button>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+                <Button
+                  type="submit"
+                  size="md"
+                  className="max-w-40"
+                  disabled={status === "sending"}
+                >
+                  {status === "sending" ? "Envoi…" : "Envoyer"}
+                </Button>
+
+                {status === "sent" && (
+                  <p className="text-accent" role="status">
+                    Message envoyé, je vous réponds sous 48 heures.
+                  </p>
+                )}
+
+                {status === "error" && (
+                  <p className="text-red-400" role="alert">
+                    {errorMessage}{" "}
+                    <a href={`mailto:${EMAIL}`} className="underline">
+                      {EMAIL}
+                    </a>
+                  </p>
+                )}
+              </div>
             </form>
           </div>
 
@@ -102,7 +269,16 @@ const Contacts = () => {
                     </div>
                     <div className="flex-1">
                       <p className="text-white/60">{item.title}</p>
-                      <h3 className="text-xl">{item.description}</h3>
+                      {item.href ? (
+                        <a
+                          href={item.href}
+                          className="text-xl hover:text-accent transition-all"
+                        >
+                          {item.description}
+                        </a>
+                      ) : (
+                        <h3 className="text-xl">{item.description}</h3>
+                      )}
                     </div>
                   </li>
                 );

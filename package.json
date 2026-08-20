@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next-sitemap",
+    "build": "next build",
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint"
@@ -26,6 +26,7 @@
     "react-countup": "^6.5.3",
     "react-dom": "^18.2.0",
     "react-icons": "^5.2.1",
+    "resend": "^6.20.0",
     "swiper": "^11.1.9",
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7"
