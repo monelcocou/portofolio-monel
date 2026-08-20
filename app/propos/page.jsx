@@ -1,26 +1,30 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-
-import { ScrollArea } from "@/components/ui/scroll-area";
 
 import {
   FaHtml5,
   FaCss3,
   FaJs,
   FaReact,
-  FaFigma,
+  FaVuejs,
   FaNodeJs,
+  FaJava,
+  FaDocker,
+  FaGitAlt,
+  FaLaravel,
   FaWordpress, FaPhp, FaSymfony, FaBootstrap,
 } from "react-icons/fa";
 
-import {SiTailwindcss, SiNextdotjs, SiNestjs, SiMysql} from "react-icons/si";
+import {
+  SiTailwindcss,
+  SiNextdotjs,
+  SiNestjs,
+  SiMysql,
+  SiTypescript,
+  SiMongodb,
+} from "react-icons/si";
 import { TbBrandCSharp } from "react-icons/tb";
 import { motion } from "framer-motion";
 import {BiLogoPostgresql} from "react-icons/bi";
@@ -30,38 +34,49 @@ import {DiMsqlServer} from "react-icons/di";
 const about = {
   title: "A propos de moi",
   description:
-    "Vous avez un projet en tête ou souhaitez en savoir plus sur mes" +
-      " services ? Je serais ravi d’échanger avec vous. N’hésitez " +
-      "pas à me contacter pour discuter de vos besoins ou poser vos questions. Je suis à votre écoute.",
+    "Développeur full-stack depuis plus de huit ans. J’ai commencé par des " +
+      "applications de gestion en C# au Bénin, puis j’ai créé CICASYS et conçu " +
+      "des logiciels métier pour le secteur médical, aujourd’hui utilisés par " +
+      "plus de 70 cliniques, laboratoires et cabinets. Je suis désormais en " +
+      "Master 2 MIAGE à l’Université de Rennes, en alternance chez Samsic.",
   info: [
     {
       fieldName: "Nom:",
       fieldValue: "Monel Cocou GAFFAN",
     },
     {
-      fieldName: "Phone:",
-      fieldValue: "(+33) 07 44 72 09 33",
-    },
-    {
       fieldName: "Expérience:",
       fieldValue: "+8 Années",
+    },
+    {
+      fieldName: "Localisation:",
+      fieldValue: "Rennes, France",
     },
     {
       fieldName: "Nationalité:",
       fieldValue: "Béninoise",
     },
     {
-      fieldName: "Email:",
-      fieldValue: "monelcocou@gmail.com",
+      fieldName: "Langues:",
+      fieldValue: "Français (natif), Anglais (B1)",
+      wide: true,
     },
     {
-      fieldName: "Langues:",
-      fieldValue: "Français, Anglais",
+      fieldName: "Statut:",
+      fieldValue: "Master 2 MIAGE en alternance",
+      wide: true,
     },
-    /*{
-      fieldName: "Freelance",
-      fieldValue: "Disponible",
-    },*/
+  ],
+  highlights: [
+    {
+      label: "Hackathon",
+      value:
+        "3ᵉ place — BreakTheCode 2025 (Sopra Steria), avec l’équipe L3G4CY",
+    },
+    {
+      label: "Produits en production",
+      value: "Medica, Cica Laboratoire, Cica Facturation, Optica, Medivio",
+    },
   ],
 };
 
@@ -70,32 +85,50 @@ const experience = {
   icon: "/assets/resume/badge.svg",
   title: "Mon expérience",
   description:
-    "Mon parcours professionnel m’a permis de concevoir des solutions " +
-      "logicielles sur mesure et de participer à des projets innovants, " +
-      "en étroite collaboration avec des entreprises. Grâce à une solide " +
-      "expertise technique et un sens aigu de l’écoute, j’ai pu répondre " +
-      "efficacement à des besoins métiers concrets, tout en assurant performance, " +
-      "fiabilité et évolutivité des outils développés",
+    "Plus de huit ans de terrain, du développement d’applications desktop en C# " +
+      "à la conception de plateformes SaaS. Cinq de ces années passées à faire " +
+      "vivre mes propres produits chez des clients payants m’ont appris autant " +
+      "sur la maintenance, le support et la relation client que sur le code.",
   items: [
     {
-      company: "InnovQube",
-      position: "Stage Développeur Laravel",
+      company: "SAMSIC — Rennes",
+      position: "Développeur Full-Stack (alternance)",
+      duration: "Depuis Septembre 2026",
+      details: "Application MySamsic — Symfony, ElasticSearch",
+    },
+    {
+      company: "SAMSIC — Rennes",
+      position: "Stage - Développeur Symfony",
+      duration: "Mai - Aout 2026",
+      details:
+        "Fonctionnalité des minutes prévention de MySamsic — Symfony, ElasticSearch",
+    },
+    {
+      company: "InnovQube — Paris",
+      position: "Stage - Développeur Laravel",
       duration: "Avril - Juin 2025",
+      details:
+        "SaaS B2B en environnement Agile — Laravel 12, Vue.js, Livewire, Filament, GitLab CI/CD",
     },
     {
-      company: "CICASYS",
-      position: "CEO et Développeur",
+      company: "CICASYS — Cotonou",
+      position: "Fondateur & Développeur",
       duration: "2019 - 2024",
+      details:
+        "Medica, Cica Laboratoire, Cica Facturation, Medivio — C#, SQL Server, NestJS, Next.js, Symfony",
     },
     {
-      company: "GED TECHNOLOGIES",
+      company: "GED Technologies / Orabank",
       position: "Consultant en GED",
       duration: "2016 - 2018",
+      details:
+        "Dématérialisation et optimisation des process documentaires — M-Files, Kofax Express",
     },
     {
-      company: "AMANGA SA",
-      position: "Développeur d’applis Desktop",
+      company: "AMANGA SA — Cotonou",
+      position: "Développeur d’apps Desktop",
       duration: "2014 - 2016",
+      details: "Amanga Gestion Commerciale — C#, SQL Server, MySQL",
     },
   ],
 };
@@ -105,112 +138,87 @@ const education = {
   icon: "/assets/resume/cap.svg",
   title: "Mon éducation",
   description:
-    "Mon parcours académique en informatique m’a permis d’acquérir des bases" +
-      " théoriques solides ainsi que des compétences avancées en développement, " +
-      "en analyse de systèmes et en gestion de projets numériques. " +
-      "Ces connaissances me permettent aujourd’hui de concevoir des " +
-      "solutions adaptées aux enjeux techniques et organisationnels des entreprises.",
+    "Une formation initiale en informatique de gestion au Bénin, complétée par " +
+      "un parcours MIAGE à l’Université de Rennes, filière qui associe " +
+      "informatique, gestion et conduite de projet. C’est ce double regard, " +
+      "technique et métier, que j’applique aux produits que je conçois.",
   items: [
     {
-      institution: "Université de Rennes 1",
-      degree: "Master Informatique Parcours MIAGE",
-      duration: "2025",
+      institution: "Université de Rennes",
+      degree: "Master Informatique — Parcours MIAGE",
+      duration: "2025 - En cours",
     },
     {
-      institution: "Université de Rennes 1",
-      degree: "Licence Informatique Parcours MIAGE",
-      duration: "2024",
+      institution: "Université de Rennes",
+      degree: "Licence 3 Info — Parcours MIAGE",
+      duration: "2024 - 2025",
     },
     {
-      institution: "Université d'Abomey Calavi",
+      institution: "Université d'Abomey-Calavi",
       degree: "Licence Informatique de Gestion",
-      duration: "2013",
+      duration: "2010 - 2013",
     },
 
     {
-      institution: "Notre Dame de Lourdes - BJ",
-      degree: "Baccalauréat",
+      institution: "Notre Dame de Lourdes",
+      degree: "Baccalauréat Série Scientifique",
       duration: "2010",
     },
   ],
 };
 
 const skills = {
-  title: "My skills",
+  title: "Mes compétences",
   description:
-    "Mes compétences techniques et transversales témoignent de mon expertise en " +
-      "développement full-stack, en modélisation de systèmes, et en conception de " +
-      "solutions performantes. Curieux, rigoureux et orienté résultats, je sais" +
-      " m’adapter rapidement aux besoins des projets et collaborer efficacement avec " +
-      "les équipes techniques et métiers.",
-  skillList: [
+    "Je travaille aussi bien côté front que côté back, et je prends en charge la " +
+      "mise en production : conception d’API REST, bases de données " +
+      "relationnelles, conteneurisation Docker et pipelines CI/CD. Les " +
+      "technologies ci-dessous sont celles que j’utilise en projet réel, pas " +
+      "seulement en cours.",
+  categories: [
     {
-      icon: <FaHtml5 />,
-      name: "HTML",
+      name: "Front-end",
+      items: [
+        { icon: <FaHtml5 />, name: "HTML" },
+        { icon: <FaCss3 />, name: "CSS" },
+        { icon: <FaJs />, name: "JavaScript" },
+        { icon: <SiTypescript />, name: "TypeScript" },
+        { icon: <FaReact />, name: "React.js" },
+        { icon: <SiNextdotjs />, name: "Next.js" },
+        { icon: <FaVuejs />, name: "Vue.js" },
+        { icon: <SiTailwindcss />, name: "Tailwind CSS" },
+        { icon: <FaBootstrap />, name: "Bootstrap" },
+      ],
     },
     {
-      icon: <FaCss3 />,
-      name: "CSS",
+      name: "Back-end",
+      items: [
+        { icon: <FaNodeJs />, name: "Node.js" },
+        { icon: <SiNestjs />, name: "NestJS" },
+        { icon: <FaPhp />, name: "PHP" },
+        { icon: <FaSymfony />, name: "Symfony" },
+        { icon: <FaLaravel />, name: "Laravel" },
+        { icon: <TbBrandCSharp />, name: "C#" },
+        { icon: <FaJava />, name: "Java / Spring Boot" },
+        { icon: <FaWordpress />, name: "WordPress" },
+      ],
     },
     {
-      icon: <FaJs />,
-      name: "Javascript",
+      name: "Bases de données",
+      items: [
+        { icon: <SiMysql />, name: "MySQL" },
+        { icon: <BiLogoPostgresql />, name: "PostgreSQL" },
+        { icon: <DiMsqlServer />, name: "SQL Server" },
+        { icon: <SiMongodb />, name: "MongoDB" },
+      ],
     },
     {
-      icon:<FaBootstrap />,
-      name: "Bootstrap",
+      name: "Outils & DevOps",
+      items: [
+        { icon: <FaDocker />, name: "Docker" },
+        { icon: <FaGitAlt />, name: "Git / GitLab CI-CD" },
+      ],
     },
-    {
-      icon: <SiTailwindcss />,
-      name: "tailwind.css",
-    },
-    {
-      icon: <FaReact />,
-      name: "react.js",
-    },
-    {
-      icon: <SiNextdotjs />,
-      name: "next.js",
-    },
-    {
-      icon: <FaNodeJs />,
-      name: "node.js",
-    },
-    {
-      icon: <FaPhp />,
-      name: "PHP",
-    },
-    {
-      icon: <FaSymfony />,
-      name: "Symfony",
-    },
-    {
-      icon: <SiNestjs />,
-      name: "NestJS",
-    },
-    {
-      icon: <TbBrandCSharp />,
-      name: "C#",
-    },
-    {
-      icon: <FaWordpress />,
-      name: "Wordpress",
-    },
-    ,
-    {
-      icon: <SiMysql />,
-      name: "MySQL",
-    },
-    {
-      icon: <BiLogoPostgresql />,
-      name: "C#",
-    },
-    {
-      icon: <DiMsqlServer />,
-      name: "SQL Server",
-    }
-
-
   ],
 };
 
@@ -225,14 +233,24 @@ const Propos = () => {
       className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0"
     >
       <div className="container mx-auto ">
+        <div className="mb-14 text-center xl:text-left">
+          <h1 className="h2 mb-4">
+            Mon <span className="text-accent">parcours</span>
+          </h1>
+          <p className="max-w-[600px] mx-auto xl:mx-0 text-white/60">
+            Huit ans d’expérience, cinq produits en production et une formation
+            MIAGE. Le détail, onglet par onglet.
+          </p>
+        </div>
+
         <Tabs
           defaultValue="experience"
           className="flex flex-col xl:flex-row gap-[60px] "
         >
-          <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
+          <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6 xl:sticky xl:top-40 xl:self-start">
             <TabsTrigger value="experience">Expériences</TabsTrigger>
-            <TabsTrigger value="education">Education</TabsTrigger>
-            <TabsTrigger value="skills">Skills</TabsTrigger>
+            <TabsTrigger value="education">Éducation</TabsTrigger>
+            <TabsTrigger value="skills">Compétences</TabsTrigger>
             <TabsTrigger value="about">A propos de moi</TabsTrigger>
           </TabsList>
 
@@ -241,62 +259,63 @@ const Propos = () => {
             {/*Experience*/}
             <TabsContent value="experience" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                <h3 className="text-4xl font-bold">{experience.title}</h3>
+                <h2 className="text-4xl font-bold">{experience.title}</h2>
                 <p className="text-white/60 mx-auto xl:mx-0">
                   {experience.description}
                 </p>
-                <ScrollArea className="h-[400px]">
-                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
-                    {experience.items.map((item, index) => {
-                      return (
-                        <li
-                          key={index}
-                          className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
-                        >
-                          <span className="text-accent">{item.duration}</span>
-                          <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
-                            {item.position}
-                          </h3>
-                          <div className="flex items-center gap-3">
-                            <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                            <p className="text-white/60">{item.company}</p>
-                          </div>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </ScrollArea>
+                <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
+                  {experience.items.map((item, index) => {
+                    return (
+                      <li
+                        key={index}
+                        className="bg-[#232329] min-h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-2"
+                      >
+                        <span className="text-accent">{item.duration}</span>
+                        <h3 className="text-xl leading-snug text-center lg:text-left">
+                          {item.position}
+                        </h3>
+                        <div className="flex items-center gap-3">
+                          <span className="w-[6px] h-[6px] shrink-0 rounded-full bg-accent"></span>
+                          <p className="text-white/60">{item.company}</p>
+                        </div>
+                        {item.details && (
+                          <p className="text-sm leading-snug text-white/40 text-center lg:text-left">
+                            {item.details}
+                          </p>
+                        )}
+                      </li>
+                    );
+                  })}
+                </ul>
               </div>
             </TabsContent>
 
             {/*Education*/}
             <TabsContent value="education" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                <h3 className="text-4xl font-bold">{education.title}</h3>
+                <h2 className="text-4xl font-bold">{education.title}</h2>
                 <p className="text-white/60 mx-auto xl:mx-0">
                   {education.description}
                 </p>
-                <ScrollArea className="h-[400px]">
-                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
-                    {education.items.map((item, index) => {
-                      return (
-                        <li
-                          key={index}
-                          className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
-                        >
-                          <span className="text-accent">{item.duration}</span>
-                          <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
-                            {item.degree}
-                          </h3>
-                          <div className="flex items-center gap-3">
-                            <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                            <p className="text-white/60">{item.institution}</p>
-                          </div>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </ScrollArea>
+                <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
+                  {education.items.map((item, index) => {
+                    return (
+                      <li
+                        key={index}
+                        className="bg-[#232329] min-h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-2"
+                      >
+                        <span className="text-accent">{item.duration}</span>
+                        <h3 className="text-xl leading-snug text-center lg:text-left">
+                          {item.degree}
+                        </h3>
+                        <div className="flex items-center gap-3">
+                          <span className="w-[6px] h-[6px] shrink-0 rounded-full bg-accent"></span>
+                          <p className="text-white/60">{item.institution}</p>
+                        </div>
+                      </li>
+                    );
+                  })}
+                </ul>
               </div>
             </TabsContent>
 
@@ -304,32 +323,38 @@ const Propos = () => {
             <TabsContent value="skills" className="w-full">
               <div className="flex flex-col gap-[30px]">
                 <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                  <h3 className="text-4xl font-bold">{skills.title}</h3>
+                  <h2 className="text-4xl font-bold">{skills.title}</h2>
                   <p className="text-white/60 mx-auto xl:mx-0">
                     {skills.description}
                   </p>
                 </div>
 
-                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
-                  {skills.skillList.map((skill, index) => {
-                    return (
-                      <li key={index}>
-                        <TooltipProvider delayDuration={100}>
-                          <Tooltip>
-                            <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
-                              <div className="text-6xl group-hover:text-accent transition-all duration-300">
+                {skills.categories.map((category, categoryIndex) => {
+                  return (
+                    <div key={categoryIndex} className="flex flex-col gap-4">
+                      <h3 className="text-sm uppercase tracking-[2px] text-accent text-center xl:text-left">
+                        {category.name}
+                      </h3>
+                      <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
+                        {category.items.map((skill, index) => {
+                          return (
+                            <li
+                              key={index}
+                              className="h-[130px] bg-[#232329] rounded-xl flex flex-col justify-center items-center gap-3 px-2 group"
+                            >
+                              <div className="text-5xl group-hover:text-accent transition-all duration-300">
                                 {skill.icon}
                               </div>
-                            </TooltipTrigger>
-                            <TooltipContent>
-                              <p className="capitalize">{skill.name}</p>
-                            </TooltipContent>
-                          </Tooltip>
-                        </TooltipProvider>
-                      </li>
-                    );
-                  })}
-                </ul>
+                              <p className="text-sm leading-snug text-white/60 text-center">
+                                {skill.name}
+                              </p>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  );
+                })}
               </div>
             </TabsContent>
 
@@ -339,7 +364,7 @@ const Propos = () => {
               className="w-full text-center xl:text-left"
             >
               <div className="flex flex-col gap-[30px]">
-                <h3 className="text-4xl font-bold">{about.title}</h3>
+                <h2 className="text-4xl font-bold">{about.title}</h2>
                 <p className="text-white/60 mx-auto xl:mx-0">
                   {about.description}
                 </p>
@@ -348,14 +373,45 @@ const Propos = () => {
                     return (
                       <li
                         key={index}
-                        className="flex items-center justify-center xl:justify-start gap-4"
+                        className={`flex items-center justify-center xl:justify-start gap-4 ${
+                          item.wide ? "xl:col-span-2" : ""
+                        }`}
                       >
-                        <span className="text-white/60">{item.fieldName}</span>
-                        <span className="text-xl">{item.fieldValue}</span>
+                        <span className="text-white/60 xl:whitespace-nowrap">
+                          {item.fieldName}
+                        </span>
+                        <span className="text-xl xl:whitespace-nowrap">
+                          {item.fieldValue}
+                        </span>
                       </li>
                     );
                   })}
                 </ul>
+
+                <ul className="flex flex-col gap-4 max-w-[720px] mx-auto xl:mx-0">
+                  {about.highlights.map((item, index) => {
+                    return (
+                      <li
+                        key={index}
+                        className="bg-[#232329] rounded-xl py-4 px-6 flex flex-col gap-1"
+                      >
+                        <span className="text-sm uppercase tracking-[2px] text-accent">
+                          {item.label}
+                        </span>
+                        <p className="text-white/60 leading-snug">
+                          {item.value}
+                        </p>
+                      </li>
+                    );
+                  })}
+                </ul>
+
+                <Link
+                  href="/contact"
+                  className="text-accent hover:text-accent-hover transition-all mx-auto xl:mx-0"
+                >
+                  Me contacter →
+                </Link>
               </div>
             </TabsContent>
           </div>

@@ -22,7 +22,7 @@ const projects = [
     category: "Medica",
     title: "Medica",
     description:
-      "Medica est une application utilisée par plus de 50 cliniques pour simplifier et accélérer la gestion des données médicales.",
+      "Medica est une plateforme de gestion hospitalière utilisée par 70 cliniques pour simplifier et accélérer la gestion des données médicales.",
     stack: [{ name: "C#" }, { name: "SQL Server" }],
     image: "/assets/work/ic_medica.png",
     live: "https://cicasys.co/medica/",
@@ -30,6 +30,23 @@ const projects = [
   },
   {
     num: "02",
+    category: "Medivio",
+    title: "Medivio",
+    description:
+        "Plateforme SaaS de médecine du travail conçue et développée pour les cabinets médicaux d'Afrique francophone : suivi des salariés, visites médicales et aptitudes, AT/MP, vaccinations, prévention, agenda, alertes temps réel et abonnement mobile money.",
+    stack: [
+      { name: "Next.js" },
+      { name: "NestJS" },
+      { name: "Prisma" },
+      { name: "PostgreSQL" },
+      { name: "Docker" },
+    ],
+    image: "/assets/work/ic_medivio.jpeg",
+    live: "https://medivio.app",
+    github: "",
+  },
+  {
+    num: "03",
     category: "Cica Laboratoire",
     title: "Cica Laboratoire",
     description:
@@ -40,7 +57,7 @@ const projects = [
     github: "",
   },
   {
-    num: "03",
+    num: "04",
     category: "Cica Facturation",
     title: "Cica Facturation",
     description:
@@ -51,7 +68,7 @@ const projects = [
     github: "",
   },
   {
-    num: "04",
+    num: "05",
     category: "Optica",
     title: "Optica",
     description:
@@ -61,28 +78,17 @@ const projects = [
     live: "https://www.cicasys.co/",
     github: "",
   },
-  {
-    num: "05",
-    category: "InnovRental",
-    title: "InnovRental",
-    description:
-        "InnovRental est une application SaaS de gestion locative, à laquelle j’ai contribué durant mon stage en développant des modules clés.",
-    stack: [{ name: "Laravel" }, { name: "Filament" }, { name: "Livewire" }, { name: "MySQL" }],
-    image: "/assets/work/ic_innov_rental.png",
-    live: "https://dev1.innovrental.com/",
-    github: "",
-  },
-  {
-    num: "06",
-    category: "EduBase",
-    title: "EduBase",
-    description:
-        "Edubase est une application de gestion scolaire complète, facilitant le suivi académique, administratif et la communication entre acteurs éducatifs.",
-    stack: [{ name: "NestJS" }, { name: "NextJS" }, { name: "Prisma" }, { name: "PostgreSQL" }],
-    image: "/assets/work/ic_edubase.png",
-    live: "https://github.com/monelcocou/edubase",
-    github: "",
-  },
+  // {
+  //   num: "06",
+  //   category: "EduBase",
+  //   title: "EduBase",
+  //   description:
+  //       "Edubase est une application de gestion scolaire complète, facilitant le suivi académique, administratif et la communication entre acteurs éducatifs.",
+  //   stack: [{ name: "NestJS" }, { name: "NextJS" }, { name: "Prisma" }, { name: "PostgreSQL" }],
+  //   image: "/assets/work/ic_edubase.png",
+  //   live: "",
+  //   github: "https://github.com/monelcocou/edubase",
+  // },
 ];
 
 const Realisations = () => {
@@ -102,6 +108,16 @@ const Realisations = () => {
       className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0"
     >
       <div className="container mx-auto">
+        <div className="mb-14 text-center xl:text-left">
+          <h1 className="h2 mb-4">
+            Mes <span className="text-accent">réalisations</span>
+          </h1>
+          <p className="max-w-[600px] mx-auto xl:mx-0 text-white/60">
+            Cinq produits conçus et livrés, du logiciel de gestion clinique à la
+            plateforme SaaS. Tous utilisés par de vrais clients.
+          </p>
+        </div>
+
         <div className="flex flex-col xl:flex-row xl:gap-[30px]">
           <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
             <div className="flex flex-col gap-[30px] h-[50%]">
@@ -136,32 +152,44 @@ const Realisations = () => {
               {/*buttons*/}
               <div className="flex items-center gap-4">
                 {/*Live project button*/}
-                <Link href={project.live}>
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Live Project</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
+                {project.live && (
+                  <Link
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <TooltipProvider delayDuration={100}>
+                      <Tooltip>
+                        <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+                          <BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>Voir le projet</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </Link>
+                )}
 
                 {/*Github project button*/}
-                <Link href={project.github}>
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsGithub className="text-white text-3xl group-hover:text-accent" />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Github Repository</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
+                {project.github && (
+                  <Link
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <TooltipProvider delayDuration={100}>
+                      <Tooltip>
+                        <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+                          <BsGithub className="text-white text-3xl group-hover:text-accent" />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>Dépôt Github</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </Link>
+                )}
               </div>
             </div>
           </div>
@@ -184,8 +212,9 @@ const Realisations = () => {
                         <Image
                           src={project.image}
                           fill
+                          sizes="(max-width: 1280px) 100vw, 50vw"
                           className="object-cover"
-                          alt=""
+                          alt={`Aperçu du projet ${project.title}`}
                         />
                       </div>
                     </div>
