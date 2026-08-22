@@ -3,7 +3,7 @@ import { buildMetadata } from "@/lib/metadata";
 export const metadata = buildMetadata({
   title: "Réalisations",
   description:
-    "Medica, Medivio, Cica Laboratoire, Cica Facturation, Optica : cinq produits conçus et livrés, utilisés au quotidien par 70 cliniques et laboratoires.",
+    "Medica, Medivio, Cica Laboratoire : trois produits conçus et livrés, utilisés au quotidien par 70 cliniques et laboratoires.",
   path: "/realisations",
 });
 

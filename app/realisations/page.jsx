@@ -25,7 +25,7 @@ const projects = [
       "Medica est une plateforme de gestion hospitalière utilisée par 70 cliniques pour simplifier et accélérer la gestion des données médicales.",
     stack: [{ name: "C#" }, { name: "SQL Server" }],
     image: "/assets/work/ic_medica.png",
-    live: "https://cicasys.co/medica/",
+    live: "https://cicasys.co/produits/medica",
     github: "",
   },
   {
@@ -42,7 +42,7 @@ const projects = [
       { name: "Docker" },
     ],
     image: "/assets/work/ic_medivio.jpeg",
-    live: "https://medivio.app",
+    live: "https://cicasys.co/produits/medivio",
     github: "",
   },
   {
@@ -53,31 +53,31 @@ const projects = [
       "Solution avancée de gestion de laboratoire, optimisant l’analyse des échantillons, la traçabilité et la collaboration pour des résultats fiables et rapides.",
     stack: [{ name: "C#" }, { name: "SQL Server" }],
     image: "/assets/work/ic_labo.png",
-    live: "https://cicasys.co/cica-laboratoire/",
+    live: "https://cicasys.co/produits/cica-laboratoire",
     github: "",
   },
-  {
-    num: "04",
-    category: "Cica Facturation",
-    title: "Cica Facturation",
-    description:
-      "Logiciel de facturation professionnel, simplifiant la gestion des devis, factures et paiements pour une comptabilité précise et efficace.",
-    stack: [{ name: "C#" }, { name: "SQL Server" }],
-    image: "/assets/work/ic_facturation.png",
-    live: "https://cicasys.co/cica-facturation/",
-    github: "",
-  },
-  {
-    num: "05",
-    category: "Optica",
-    title: "Optica",
-    description:
-        "Optica est un logiciel dédié à la gestion des centres optiques, conçu pour simplifier leurs opérations et améliorer leur productivité.",
-    stack: [{ name: "C#" }, { name: "SQL Server" }],
-    image: "/assets/work/ic_optica.png",
-    live: "https://www.cicasys.co/",
-    github: "",
-  },
+  // {
+  //   num: "04",
+  //   category: "Cica Facturation",
+  //   title: "Cica Facturation",
+  //   description:
+  //   "Logiciel de facturation professionnel, simplifiant la gestion des devis, factures et paiements pour une comptabilité précise et efficace.",
+  //   stack: [{ name: "C#" }, { name: "SQL Server" }],
+  //   image: "/assets/work/ic_facturation.png",
+  //   live: "https://cicasys.co/cica-facturation/",
+  //   github: "",
+  // },
+  // {
+  //   num: "05",
+  //   category: "Optica",
+  //   title: "Optica",
+  //   description:
+  //   "Optica est un logiciel dédié à la gestion des centres optiques, conçu pour simplifier leurs opérations et améliorer leur productivité.",
+  //   stack: [{ name: "C#" }, { name: "SQL Server" }],
+  //   image: "/assets/work/ic_optica.png",
+  //   live: "https://www.cicasys.co/",
+  //   github: "",
+  // },
   // {
   //   num: "06",
   //   category: "EduBase",
