@@ -1,0 +1,15 @@
+node_modules
+.next
+.next-verify
+out
+.git
+.github
+.idea
+*.log
+.env
+.env.*
+!.env.example
+Dockerfile
+.dockerignore
+README.md
+CLAUDE.md.claude
