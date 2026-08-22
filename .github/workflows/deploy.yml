@@ -58,5 +58,7 @@ jobs:
             set -e
             cd /opt/portfolio
             docker compose pull
-            docker compose up -d
+            docker compose up -d --force-recreate
+            sleep 8
+            curl -fsS 127.0.0.1:3002/api/health
             docker image prune -f
